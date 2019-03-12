@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.order.dispatch.mapper.DbApplyMatterMapper">
+  <resultMap id="BaseResultMap" type="cn.com.order.dispatch.entity.DbApplyMatter">
+    <result column="APPLY_SERIAL_NO" jdbcType="VARCHAR" property="applySerialNo" />
+    <result column="ORDER_NO" jdbcType="VARCHAR" property="orderNo" />
+    <result column="CUST_NAME" jdbcType="VARCHAR" property="custName" />
+    <result column="CUST_NO" jdbcType="VARCHAR" property="custNo" />
+    <result column="WECHAT_NO" jdbcType="VARCHAR" property="wechatNo" />
+    <result column="WANGWANG_ID" jdbcType="VARCHAR" property="wangwangId" />
+    <result column="SEX_TYP" jdbcType="VARCHAR" property="sexTyp" />
+    <result column="CUST_AGE" jdbcType="VARCHAR" property="custAge" />
+    <result column="BIRTH_DATE" jdbcType="DATE" property="birthDate" />
+    <result column="LAST_TIME" jdbcType="DATE" property="lastTime" />
+    <result column="ANOTHER_TIME" jdbcType="DATE" property="anotherTime" />
+    <result column="LINK_SERIAL_NO" jdbcType="VARCHAR" property="linkSerialNo" />
+    <result column="LINK_ID" jdbcType="VARCHAR" property="linkId" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="FOUNDER_USER" jdbcType="VARCHAR" property="founderUser" />
+    <result column="FOUNDER_TIME" jdbcType="DATE" property="founderTime" />
+    <result column="APPLY_TYP" jdbcType="VARCHAR" property="applyTyp" />
+    <result column="STORE_NAME" jdbcType="VARCHAR" property="storeName" />
+    <result column="STORE_NO" jdbcType="VARCHAR" property="storeNo" />
+    <result column="RETURN_MONEY_NUMBER" jdbcType="VARCHAR" property="returnMoneyNumber" />
+    <result column="NO_RETURN_MONEY_NUMBER" jdbcType="VARCHAR" property="noReturnMoneyNumber" />
+    <result column="ORDER_PRICE" jdbcType="VARCHAR" property="orderPrice" />
+    <result column="CUST_GS_WX" jdbcType="VARCHAR" property="custGsWx" />
+    <result column="CUST_GS_QQ" jdbcType="VARCHAR" property="custGsQq" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    APPLY_SERIAL_NO, ORDER_NO, CUST_NAME, CUST_NO, WECHAT_NO, WANGWANG_ID, SEX_TYP, CUST_AGE, 
+    BIRTH_DATE, LAST_TIME, ANOTHER_TIME, LINK_SERIAL_NO, LINK_ID, UPDATE_TIME, UPDATE_USER, 
+    FOUNDER_USER, FOUNDER_TIME, APPLY_TYP, STORE_NAME, STORE_NO, RETURN_MONEY_NUMBER, 
+    NO_RETURN_MONEY_NUMBER, ORDER_PRICE,CUST_GS_WX,CUST_GS_QQ
+  </sql>
+  <insert id="insert" parameterType="cn.com.order.dispatch.entity.DbApplyMatter">
+    insert into db_apply_matter (APPLY_SERIAL_NO, ORDER_NO, CUST_NAME, 
+      CUST_NO, WECHAT_NO, WANGWANG_ID, 
+      SEX_TYP, CUST_AGE, BIRTH_DATE, 
+      LAST_TIME, ANOTHER_TIME, LINK_SERIAL_NO, 
+      LINK_ID, UPDATE_TIME, UPDATE_USER, 
+      FOUNDER_USER, FOUNDER_TIME, APPLY_TYP, 
+      STORE_NAME, STORE_NO, RETURN_MONEY_NUMBER, 
+      NO_RETURN_MONEY_NUMBER, ORDER_PRICE,CUST_GS_WX,CUST_GS_QQ)
+    values (#{applySerialNo,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, #{custName,jdbcType=VARCHAR}, 
+      #{custNo,jdbcType=VARCHAR}, #{wechatNo,jdbcType=VARCHAR}, #{wangwangId,jdbcType=VARCHAR}, 
+      #{sexTyp,jdbcType=VARCHAR}, #{custAge,jdbcType=VARCHAR}, #{birthDate,jdbcType=DATE}, 
+      #{lastTime,jdbcType=DATE}, #{anotherTime,jdbcType=DATE}, #{linkSerialNo,jdbcType=VARCHAR}, 
+      #{linkId,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, #{updateUser,jdbcType=VARCHAR}, 
+      #{founderUser,jdbcType=VARCHAR}, #{founderTime,jdbcType=DATE}, #{applyTyp,jdbcType=VARCHAR}, 
+      #{storeName,jdbcType=VARCHAR}, #{storeNo,jdbcType=VARCHAR}, #{returnMoneyNumber,jdbcType=VARCHAR}, 
+      #{noReturnMoneyNumber,jdbcType=VARCHAR}, #{orderPrice,jdbcType=VARCHAR},
+      #{custGsWx,jdbcType=VARCHAR}, #{custGsQq,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.order.dispatch.entity.DbApplyMatter">
+    insert into db_apply_matter
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="applySerialNo != null">
+        APPLY_SERIAL_NO,
+      </if>
+      <if test="orderNo != null">
+        ORDER_NO,
+      </if>
+      <if test="custName != null">
+        CUST_NAME,
+      </if>
+      <if test="custNo != null">
+        CUST_NO,
+      </if>
+      <if test="wechatNo != null">
+        WECHAT_NO,
+      </if>
+      <if test="wangwangId != null">
+        WANGWANG_ID,
+      </if>
+      <if test="sexTyp != null">
+        SEX_TYP,
+      </if>
+      <if test="custAge != null">
+        CUST_AGE,
+      </if>
+      <if test="birthDate != null">
+        BIRTH_DATE,
+      </if>
+      <if test="lastTime != null">
+        LAST_TIME,
+      </if>
+      <if test="anotherTime != null">
+        ANOTHER_TIME,
+      </if>
+      <if test="linkSerialNo != null">
+        LINK_SERIAL_NO,
+      </if>
+      <if test="linkId != null">
+        LINK_ID,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="founderUser != null">
+        FOUNDER_USER,
+      </if>
+      <if test="founderTime != null">
+        FOUNDER_TIME,
+      </if>
+      <if test="applyTyp != null">
+        APPLY_TYP,
+      </if>
+      <if test="storeName != null">
+        STORE_NAME,
+      </if>
+      <if test="storeNo != null">
+        STORE_NO,
+      </if>
+      <if test="returnMoneyNumber != null">
+        RETURN_MONEY_NUMBER,
+      </if>
+      <if test="noReturnMoneyNumber != null">
+        NO_RETURN_MONEY_NUMBER,
+      </if>
+      <if test="orderPrice != null">
+        ORDER_PRICE,
+      </if>
+      <if test="custGsWx != null">
+        CUST_GS_WX,
+      </if>
+      <if test="custGsQq != null">
+        CUST_GS_QQ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="applySerialNo != null">
+        #{applySerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null">
+        #{orderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="custName != null">
+        #{custName,jdbcType=VARCHAR},
+      </if>
+      <if test="custNo != null">
+        #{custNo,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNo != null">
+        #{wechatNo,jdbcType=VARCHAR},
+      </if>
+      <if test="wangwangId != null">
+        #{wangwangId,jdbcType=VARCHAR},
+      </if>
+      <if test="sexTyp != null">
+        #{sexTyp,jdbcType=VARCHAR},
+      </if>
+      <if test="custAge != null">
+        #{custAge,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null">
+        #{birthDate,jdbcType=DATE},
+      </if>
+      <if test="lastTime != null">
+        #{lastTime,jdbcType=DATE},
+      </if>
+      <if test="anotherTime != null">
+        #{anotherTime,jdbcType=DATE},
+      </if>
+      <if test="linkSerialNo != null">
+        #{linkSerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="linkId != null">
+        #{linkId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="founderUser != null">
+        #{founderUser,jdbcType=VARCHAR},
+      </if>
+      <if test="founderTime != null">
+        #{founderTime,jdbcType=DATE},
+      </if>
+      <if test="applyTyp != null">
+        #{applyTyp,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null">
+        #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeNo != null">
+        #{storeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="returnMoneyNumber != null">
+        #{returnMoneyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="noReturnMoneyNumber != null">
+        #{noReturnMoneyNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderPrice != null">
+        #{orderPrice,jdbcType=VARCHAR},
+      </if>
+       <if test="custGsWx != null">
+        #{custGsWx,jdbcType=VARCHAR},
+      </if>
+      <if test="custGsQq != null">
+       #{custGsQq,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="selectCurrentPK" resultType="java.lang.Long">
+		select
+		ifnull(max(APPLY_SERIAL_NO),0)
+		from db_apply_matter
+		where 
+		FOUNDER_TIME = #{founderTime,jdbcType=DATE}
+	</select>
+
+  <select id="selectByCondition" resultMap="BaseResultMap" parameterType="java.util.Map">
+		select
+		<include refid="Base_Column_List"></include>
+		from db_apply_matter
+		<if test="_parameter!=null">
+			<include refid="MAP_Where_Clause"></include>
+		</if>
+		order by FOUNDER_TIME desc
+	</select>
+	
+	<sql id="MAP_Where_Clause">
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			AND 1=1
+			<if test="record.linkSerialNolike != null">
+				AND LINK_SERIAL_NO like #{record.linkSerialNolike,jdbcType=VARCHAR}
+			</if>
+			<if test="record.linkSerialNo != null">
+				AND LINK_SERIAL_NO = #{record.linkSerialNo,jdbcType=VARCHAR}
+			</if>
+			<if test="record.custNo != null">
+				AND CUST_NO = #{record.custNo,jdbcType=VARCHAR}
+			</if>
+			<if test="record.custName != null">
+				AND CUST_NAME = #{record.custName,jdbcType=VARCHAR}
+			</if>
+			<if test="record.applyTyp != null">
+				AND APPLY_TYP = #{record.applyTyp,jdbcType=VARCHAR}
+			</if>
+			<if test="record.custWx != null">
+				AND WECHAT_NO = #{record.custWx,jdbcType=VARCHAR}
+			</if>
+			<if test="record.custWwid != null">
+				AND WANGWANG_ID = #{record.custWwid,jdbcType=VARCHAR}
+			</if>
+			<if test="record.storeNo != null">
+				AND STORE_NO = #{record.storeNo,jdbcType=VARCHAR}
+			</if>
+			<if test="record.linkNo != null">
+				AND LINK_ID = #{record.linkNo,jdbcType=VARCHAR}
+			</if>
+			<if test="record.orderNo != null">
+				AND ORDER_NO = #{record.orderNo,jdbcType=VARCHAR}
+			</if>
+			<if test="record.founderTime != null">
+				AND FOUNDER_TIME = #{record.founderTime,jdbcType=VARCHAR}
+			</if>
+			<if test="record.founderUser != null">
+				AND FOUNDER_USER = #{record.founderUser,jdbcType=VARCHAR}
+			</if>
+			<if test="record.custGsWx != null">
+				AND CUST_GS_WX = #{record.custGsWx,jdbcType=VARCHAR}
+			</if>
+			<if test="record.custGsQq != null">
+				AND CUST_GS_QQ = #{record.custGsQq,jdbcType=VARCHAR}
+			</if>
+			<if test="record.operatorUsers != null">
+				AND FOUNDER_USER IN 
+				<foreach collection="record.operatorUsers" index="index" item="item" open="(" separator="," close=")">
+					#{item,jdbcType=VARCHAR}
+				</foreach>
+			</if>
+		</trim>
+	</sql>
+  <select id="selectById" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"></include>
+		from db_apply_matter
+		where
+		APPLY_SERIAL_NO = #{orderNo,jdbcType=VARCHAR}
+	</select>
+	
+	<update id="updateSelective" parameterType="cn.com.order.dispatch.entity.DbApplyMatter">
+		update db_apply_matter
+		<set>
+			<if test="orderNo != null">
+				ORDER_NO = #{orderNo,jdbcType=VARCHAR},
+			</if>
+			<if test="returnMoneyNumber != null">
+				RETURN_MONEY_NUMBER = #{returnMoneyNumber,jdbcType=VARCHAR},
+			</if>
+			<if test="noReturnMoneyNumber != null">
+				NO_RETURN_MONEY_NUMBER = #{noReturnMoneyNumber,jdbcType=VARCHAR},
+			</if>
+			<if test="orderPrice != null">
+				ORDER_PRICE = #{orderPrice,jdbcType=VARCHAR},
+			</if>
+			<if test="applyTyp != null">
+				APPLY_TYP = #{applyTyp,jdbcType=VARCHAR},
+			</if>
+			<if test="updateUser != null">
+				UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null">
+				UPDATE_TIME = #{updateTime,jdbcType=VARCHAR},
+			</if>
+			<if test="custGsWx != null">
+				AND CUST_GS_WX = #{custGsWx,jdbcType=VARCHAR}
+			</if>
+			<if test="custGsQq != null">
+				AND CUST_GS_QQ = #{custGsQq,jdbcType=VARCHAR}
+			</if>
+		</set>
+		where
+		APPLY_SERIAL_NO = #{applySerialNo,jdbcType=VARCHAR}
+	</update>
+	
+	<delete id="deleteByID">
+		delete from
+		db_apply_matter
+		where
+		APPLY_SERIAL_NO =
+		#{applySerialNo,jdbcType=VARCHAR}
+	</delete>
+	<select id="selectByCustomerNo" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"></include>
+		from db_apply_matter
+		where CUST_NO = #{customerNo,jdbcType=VARCHAR}
+		AND datediff(sysdate(),FOUNDER_TIME) between 3 and 30
+	</select>
+	<select id="selectCountByCondition" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select
+		count(APPLY_SERIAL_NO)
+		from db_apply_matter
+		<if test="_parameter!=null">
+		<include refid="MAP_Where_Clause"></include>
+		</if>
+	</select>
+	
+	<select id="selectCountByStoreNo" resultType="java.lang.Integer" parameterType="java.util.Map">
+		select
+		count(APPLY_SERIAL_NO)
+		from db_apply_matter
+		where STORE_NO = #{storeNo,jdbcType=VARCHAR}
+	</select>
+
+</mapper>
